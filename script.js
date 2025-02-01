@@ -13,22 +13,28 @@ displays()
     .then((arr) => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                const filterArr = arr.filter((item) => item % 2 === 0);
+                const filterArr = arr.filter((item) => Math.floor(item % 2) === 0);
                 resolve(filterArr); // Resolve with filtered array
+				output.textContent = `${filterArr}`;
             }, 1000);
         }); 
-    })
+    }) 
     .then((filterArr) => {
         return new Promise((resolve, reject) => {
-            setTimeout(() => {
+            setTimeout(() => { 
                 const doubleArr = filterArr.map((item) => item * 2);
                 resolve({ filterArr, doubleArr }); // Pass both arrays
-            }, 2000);
+            }, 2000);  
         });
     })
     .then(({ filterArr, doubleArr }) => {
-        output.textContent = `Even Numbers: ${filterArr}, Doubled Numbers: ${doubleArr}`;
+        output.textContent = `  ${doubleArr}`;
     })
     .catch((error) => {
         console.error('Error:', error);
+
+
+
+
+		
     });
