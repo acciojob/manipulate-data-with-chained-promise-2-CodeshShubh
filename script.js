@@ -21,7 +21,9 @@ displays().then((arr)=>{
 			let double = arr.map((item)=>item*2);
 		},2000)
 	})
+}).then((filter)=>{
+	output.textContent = `Even Numbers: ${filter}`
 }).then((doubleArr)=>{
-	output.textContent = `Even Numbers: ${doubleArr}`
+	output.textContent = `double Numbers: ${doubleArr}`
 })
 .catch((error) => { console.log('error', error); })
