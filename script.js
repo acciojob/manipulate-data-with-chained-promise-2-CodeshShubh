@@ -2,7 +2,7 @@ let arr = [1, 2, 3, 4];
 let output = document.getElementById('output');
 
 function displays() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => { 
         setTimeout(() => {
             resolve([1, 2, 3, 4]);
         }, 3000);
@@ -23,12 +23,12 @@ displays()
         return new Promise((resolve, reject) => {
             setTimeout(() => { 
                 const doubleArr = filterArr.map((item) => item * 2);
-                resolve({ filterArr, doubleArr }); // Pass both arrays
+                resolve( doubleArr); 
             }, 2000);  
         });
     })
-    .then(({ filterArr, doubleArr }) => {
-        output.textContent = `  ${doubleArr}`;
+    .then((doubleArr) => {
+        output.textContent = `${doubleArr}`;
     })
     .catch((error) => {
         console.error('Error:', error);
